@@ -4,8 +4,8 @@ import scrapy
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.response import open_in_browser
 
-url = "http://www.wikipedia.org" # html url
-url2 = "http://httpbin.org/headers" # header url
+url = "http://172.18.58.80/index.php" # html url index
+url2 = "http://172.18.58.80/headers.php" # header url header
 
 r = requests.get(url)  # get request on given site
 if r.status_code == 200:
@@ -31,7 +31,7 @@ print("**********\n")
 
 class NewSpider(scrapy.Spider):
     name = "new_spider"
-    start_urls = ["https://cdn.discordapp.com/attachments/701392074007904316/1009632871163629668/Python.html"]
+    start_urls = ["http://172.18.58.80/index.php"]
 
     def parse(self, response):
         open_in_browser(response)
