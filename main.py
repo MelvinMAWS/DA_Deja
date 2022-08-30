@@ -4,7 +4,7 @@ import scrapy
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.response import open_in_browser
 
-url = "http://172.18.58.80/index.php" # html url index
+url = "http://172.18.58.80/index.html" # html url index
 url2 = "http://172.18.58.80/headers.php" # header url header
 
 r = requests.get(url)  # get request on given site
@@ -31,7 +31,7 @@ print("**********\n")
 
 class NewSpider(scrapy.Spider):
     name = "new_spider"
-    start_urls = ["http://172.18.58.80/index.php"]
+    start_urls = ["http://172.18.58.80/index.html"]
 
     def parse(self, response):
         open_in_browser(response)
